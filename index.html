@@ -1,0 +1,124 @@
+<!doctype html>
+<html class="no-js" lang="nb" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote MGP2017 | Vote</title>
+    <!-- CSS & Typeface -->
+    <link rel="stylesheet" href="_css/foundation.css">
+    <link rel="stylesheet" href="_css/app.css">
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+    <!-- Google Analytics -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-16219261-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <!-- End Google Analytics -->
+</head>
+
+<body>
+    <section>
+        <div id="topNav" class="expanded row">
+            <p class="text-center">Du er registrert som <strong>
+                    <a id="profileButton" class="button" href="/profile.html">Navn</a>
+                </strong> </p>
+        </div>
+        <div id="heroBar">
+            <h1 class="row small-11 medium-8 columns">VoteMGP2017<span style="font-size: 0.25em; color: yellowgreen;">alpha</span></h1> </div>
+        <div id="infoBar">
+            <div class="small-11 medium-8 small-centered">
+                <div class="row column">
+                    <p>Sang</p>
+                    <h3 id="songName"><i></i></h3> </div>
+                <div class="row">
+                    <div class="small-2 columns">
+                        <p>Nr.</p>
+                        <h3 id="songNr"></h3> </div>
+                    <div class="small-10 columns">
+                        <p>Land</p>
+                        <h3 id="countryName"><strong></strong></h3> </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div id="rangeSection" class="small-10 small-centered">
+                <div class="introText text-center">
+                    <h4><i>Gi poeng i disse fire kategoriene.</i></h4> </div>
+                <h3><i id="sa" class="em em-microphone"></i>Sang</h3>
+                <p><i>Har den noe musikalsk verdi?</i></p>
+                <div class="row column">
+                    <input id="songRange" type="range" min="0" value="0" max="10" list="tics" oninput="updateOutput(songRange, value)" />
+                    <output for="songRange">
+                        <h3 id="songRangeOutput">0</h3>
+                        <p class="show-for-large">Poeng</p>
+                    </output>
+                </div>
+                <h3><i id="sh" class="em em-tada"></i>Show</h3>
+                <p><i>That old razzle-dazzle...</i></p>
+                <div class="row column">
+                    <input id="showRange" type="range" min="0" value="0" max="10" list="tics" oninput="updateOutput(showRange, value)" />
+                    <output for="showRange">
+                        <h3 id="showRangeOutput">0</h3>
+                        <p class="show-for-large">Poeng</p>
+                    </output>
+                </div>
+                <h3><i id="ko" class="em em-dress"></i>Kostyme</h3>
+                <p><i>Ser de egentlig ut?</i></p>
+                <div class="row column">
+                    <input id="costumeRange" type="range" min="0" value="0" max="10" list="tics" oninput="updateOutput(costumeRange, value)" />
+                    <output for="costumeRange">
+                        <h3 id="costumeRangeOutput">0</h3>
+                        <p class="show-for-large">Poeng</p>
+                    </output>
+                </div>
+                <h3><i id="xf" class="em em-interrobang"></i>X-faktor</h3>
+                <p><i>Det derre uhåndgripelige "extra".</i></p>
+                <div class="row column">
+                    <input id="xFactorRange" type="range" min="0" value="0" max="10" list="tics" oninput="updateOutput(xFactorRange, value)" />
+                    <output for="xFactorRange">
+                        <h3 id="xFactorRangeOutput">0</h3>
+                        <p class="show-for-large">Poeng</p>
+                    </output>
+                </div>
+                <datalist id="tics">
+                    <option value="0"></option>
+                    <option value="1"></option>
+                    <option value="2"></option>
+                    <option value="3"></option>
+                    <option value="4"></option>
+                    <option value="5"></option>
+                    <option value="6"></option>
+                    <option value="7"></option>
+                    <option value="8"></option>
+                    <option value="9"></option>
+                    <option value="10"></option>
+                </datalist>
+                <div id="voteBar">
+                    <h3 id="score" class="text-center">Poengsum: 0</h3> <a id="voteButton" class="large expanded button">Avgi stemme</a> </div>
+            </div>
+        </div>
+    </section>
+    <footer> </footer>
+    <!--Data-->
+    <script type="text/javascript" src="_data/esc2017info.js"></script>
+    <!-- Libraries -->
+    <script src="https://www.gstatic.com/firebasejs/3.7.8/firebase.js"></script>
+    <!--  Javascript -->
+    <script type="text/javascript" src="_js/app.js"></script>
+    <script type="text/javascript" src="_js/firebaseConfig.js"></script>
+    <!--<script type="text/javascript" src="_js/addPrinciples.js"></script>-->
+</body>
+
+</html>

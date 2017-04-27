@@ -1,0 +1,1734 @@
+<!doctype html>
+<html class="no-js" lang="nb" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote MGP2017 | Profile</title>
+    <!-- CSS & Typeface -->
+    <link rel="stylesheet" href="/_css/flag-icon.min.css">
+    <link rel="stylesheet" href="_css/foundation.css">
+    <link rel="stylesheet" href="_css/app.css">
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+    <!-- Google Analytics -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-16219261-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <!-- End Google Analytics -->
+</head>
+
+<body>
+    <div id="heroBar">
+        <h1 class="row small-11 medium-10 columns">VoteMGP2017<span style="font-size: 0.35em; color: yellowgreen;">alpha</span></h1> </div>
+    <div id="infoBar">
+        <div class="small-11 medium-10 small-centered">
+            <div class="row">
+                <div class="small-6 column">
+                    <p>Resultater for:</p>
+                    <h3 id="userName"><i></i></h3> </div>
+                <div class="small-6 column">
+                    <p style="margin-bottom:15px;">Stem på neste melodi:</p> <a class="expanded button" href="/">Gå til stemmesiden</a> </div>
+            </div>
+            <div class="row">
+                <div class="small-12 columns">
+                    <p>Fremgang:</p>
+                    <div id="progressBar" class="progress" role="progressbar" tabindex="0" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"> <span class="progress-meter" style="width: 0%">
+                            <p class="progress-meter-text">0%</p>
+                        </span> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="topLabel">
+        <div class="row">
+            <div class="small-11 small-centered">
+                <div class="small-1 column">
+                    <h4>Nr</h4> </div>
+                <div class="small-2 column">
+                    <h4>Nasjon</h4> </div>
+                <div class="small-4 column">
+                    <h4 class="text-center">Tittel</h4> </div>
+                <div class="small-5 column">
+                    <div class="hide-for-small-only row">
+                        <div class="small-2 text-center columns"> <i class="em em-microphone"></i>
+                            <!-- <img class="imgIcon" src="/_img/microphone.png" alt=""> --></div>
+                        <div class="small-2 text-center columns"> <i class="em em-tada"></i>
+                            <!-- <img class="imgIcon" src="/_img/tada.png" alt=""> --></div>
+                        <div class="small-2 text-center columns"> <i class="em em-dress"></i>
+                            <!-- <img class="imgIcon" src="/_img/dress.png" alt=""> --></div>
+                        <div class="small-2 text-center columns"> <i class="em em-interrobang"></i>
+                            <!-- <img class="imgIcon" src="/_img/interrobang.png" alt=""> --></div>
+                        <div class="small-4 text-center columns">
+                            <p>Total</p>
+                        </div>
+                    </div>
+                    <div class="show-for-small-only row">
+                        <h4 class="text-center">Poeng</h4> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="pointsRow row">
+            <div class="small-11 small-centered text-left">
+                <div class="small-1 column escParticipantNr">
+                    <p></p>
+                </div>
+                <div class="small-2 column escCountryName">
+                    <p></p>
+                </div>
+                <div class="small-4 column escSongTitle">
+                    <p><i></i></p>
+                </div>
+                <div class="show-for-small-only small-5 column mobileView">
+                    <div class="small-8 columns">
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-microphone"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="soPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-tada"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="shPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-dress"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="coPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-interrobang"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="xfPoints" class="points">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small-4 columns totalPoints">
+                        <p class="points">0</p>
+                    </div>
+                </div>
+                <div class="hide-for-small-only small-5 column">
+                    <div class="row">
+                        <div class="small-2 columns">
+                            <p class="points soPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points shPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points coPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points xfPoints">0</p>
+                        </div>
+                        <div class="small-4 columns">
+                            <p class="points sumTotal">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pointsRow row">
+            <div class="small-11 small-centered text-left">
+                <div class="small-1 column escParticipantNr">
+                    <p></p>
+                </div>
+                <div class="small-2 column escCountryName">
+                    <p></p>
+                </div>
+                <div class="small-4 column escSongTitle">
+                    <p><i></i></p>
+                </div>
+                <div class="show-for-small-only small-5 column mobileView">
+                    <div class="small-8 columns">
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-microphone"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="soPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-tada"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="shPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-dress"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="coPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-interrobang"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="xfPoints" class="points">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small-4 columns totalPoints">
+                        <p class="points">0</p>
+                    </div>
+                </div>
+                <div class="hide-for-small-only small-5 column">
+                    <div class="row">
+                        <div class="small-2 columns">
+                            <p class="points soPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points shPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points coPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points xfPoints">0</p>
+                        </div>
+                        <div class="small-4 columns">
+                            <p class="points sumTotal">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pointsRow row">
+            <div class="small-11 small-centered text-left">
+                <div class="small-1 column escParticipantNr">
+                    <p></p>
+                </div>
+                <div class="small-2 column escCountryName">
+                    <p></p>
+                </div>
+                <div class="small-4 column escSongTitle">
+                    <p><i></i></p>
+                </div>
+                <div class="show-for-small-only small-5 column mobileView">
+                    <div class="small-8 columns">
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-microphone"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="soPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-tada"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="shPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-dress"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="coPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-interrobang"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="xfPoints" class="points">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small-4 columns totalPoints">
+                        <p class="points">0</p>
+                    </div>
+                </div>
+                <div class="hide-for-small-only small-5 column">
+                    <div class="row">
+                        <div class="small-2 columns">
+                            <p class="points soPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points shPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points coPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points xfPoints">0</p>
+                        </div>
+                        <div class="small-4 columns">
+                            <p class="points sumTotal">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pointsRow row">
+            <div class="small-11 small-centered text-left">
+                <div class="small-1 column escParticipantNr">
+                    <p></p>
+                </div>
+                <div class="small-2 column escCountryName">
+                    <p></p>
+                </div>
+                <div class="small-4 column escSongTitle">
+                    <p><i></i></p>
+                </div>
+                <div class="show-for-small-only small-5 column mobileView">
+                    <div class="small-8 columns">
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-microphone"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="soPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-tada"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="shPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-dress"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="coPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-interrobang"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="xfPoints" class="points">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small-4 columns totalPoints">
+                        <p class="points">0</p>
+                    </div>
+                </div>
+                <div class="hide-for-small-only small-5 column">
+                    <div class="row">
+                        <div class="small-2 columns">
+                            <p class="points soPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points shPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points coPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points xfPoints">0</p>
+                        </div>
+                        <div class="small-4 columns">
+                            <p class="points sumTotal">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pointsRow row">
+            <div class="small-11 small-centered text-left">
+                <div class="small-1 column escParticipantNr">
+                    <p></p>
+                </div>
+                <div class="small-2 column escCountryName">
+                    <p></p>
+                </div>
+                <div class="small-4 column escSongTitle">
+                    <p><i></i></p>
+                </div>
+                <div class="show-for-small-only small-5 column mobileView">
+                    <div class="small-8 columns">
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-microphone"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="soPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-tada"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="shPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-dress"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="coPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-interrobang"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="xfPoints" class="points">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small-4 columns totalPoints">
+                        <p class="points">0</p>
+                    </div>
+                </div>
+                <div class="hide-for-small-only small-5 column">
+                    <div class="row">
+                        <div class="small-2 columns">
+                            <p class="points soPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points shPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points coPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points xfPoints">0</p>
+                        </div>
+                        <div class="small-4 columns">
+                            <p class="points sumTotal">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pointsRow row">
+            <div class="small-11 small-centered text-left">
+                <div class="small-1 column escParticipantNr">
+                    <p></p>
+                </div>
+                <div class="small-2 column escCountryName">
+                    <p></p>
+                </div>
+                <div class="small-4 column escSongTitle">
+                    <p><i></i></p>
+                </div>
+                <div class="show-for-small-only small-5 column mobileView">
+                    <div class="small-8 columns">
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-microphone"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="soPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-tada"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="shPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-dress"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="coPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-interrobang"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="xfPoints" class="points">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small-4 columns totalPoints">
+                        <p class="points">0</p>
+                    </div>
+                </div>
+                <div class="hide-for-small-only small-5 column">
+                    <div class="row">
+                        <div class="small-2 columns">
+                            <p class="points soPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points shPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points coPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points xfPoints">0</p>
+                        </div>
+                        <div class="small-4 columns">
+                            <p class="points sumTotal">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pointsRow row">
+            <div class="small-11 small-centered text-left">
+                <div class="small-1 column escParticipantNr">
+                    <p></p>
+                </div>
+                <div class="small-2 column escCountryName">
+                    <p></p>
+                </div>
+                <div class="small-4 column escSongTitle">
+                    <p><i></i></p>
+                </div>
+                <div class="show-for-small-only small-5 column mobileView">
+                    <div class="small-8 columns">
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-microphone"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="soPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-tada"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="shPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-dress"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="coPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-interrobang"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="xfPoints" class="points">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small-4 columns totalPoints">
+                        <p class="points">0</p>
+                    </div>
+                </div>
+                <div class="hide-for-small-only small-5 column">
+                    <div class="row">
+                        <div class="small-2 columns">
+                            <p class="points soPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points shPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points coPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points xfPoints">0</p>
+                        </div>
+                        <div class="small-4 columns">
+                            <p class="points sumTotal">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pointsRow row">
+            <div class="small-11 small-centered text-left">
+                <div class="small-1 column escParticipantNr">
+                    <p></p>
+                </div>
+                <div class="small-2 column escCountryName">
+                    <p></p>
+                </div>
+                <div class="small-4 column escSongTitle">
+                    <p><i></i></p>
+                </div>
+                <div class="show-for-small-only small-5 column mobileView">
+                    <div class="small-8 columns">
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-microphone"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="soPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-tada"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="shPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-dress"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="coPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-interrobang"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="xfPoints" class="points">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small-4 columns totalPoints">
+                        <p class="points">0</p>
+                    </div>
+                </div>
+                <div class="hide-for-small-only small-5 column">
+                    <div class="row">
+                        <div class="small-2 columns">
+                            <p class="points soPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points shPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points coPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points xfPoints">0</p>
+                        </div>
+                        <div class="small-4 columns">
+                            <p class="points sumTotal">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pointsRow row">
+            <div class="small-11 small-centered text-left">
+                <div class="small-1 column escParticipantNr">
+                    <p></p>
+                </div>
+                <div class="small-2 column escCountryName">
+                    <p></p>
+                </div>
+                <div class="small-4 column escSongTitle">
+                    <p><i></i></p>
+                </div>
+                <div class="show-for-small-only small-5 column mobileView">
+                    <div class="small-8 columns">
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-microphone"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="soPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-tada"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="shPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-dress"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="coPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-interrobang"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="xfPoints" class="points">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small-4 columns totalPoints">
+                        <p class="points">0</p>
+                    </div>
+                </div>
+                <div class="hide-for-small-only small-5 column">
+                    <div class="row">
+                        <div class="small-2 columns">
+                            <p class="points soPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points shPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points coPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points xfPoints">0</p>
+                        </div>
+                        <div class="small-4 columns">
+                            <p class="points sumTotal">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pointsRow row">
+            <div class="small-11 small-centered text-left">
+                <div class="small-1 column escParticipantNr">
+                    <p></p>
+                </div>
+                <div class="small-2 column escCountryName">
+                    <p></p>
+                </div>
+                <div class="small-4 column escSongTitle">
+                    <p><i></i></p>
+                </div>
+                <div class="show-for-small-only small-5 column mobileView">
+                    <div class="small-8 columns">
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-microphone"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="soPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-tada"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="shPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-dress"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="coPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-interrobang"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="xfPoints" class="points">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small-4 columns totalPoints">
+                        <p class="points">0</p>
+                    </div>
+                </div>
+                <div class="hide-for-small-only small-5 column">
+                    <div class="row">
+                        <div class="small-2 columns">
+                            <p class="points soPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points shPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points coPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points xfPoints">0</p>
+                        </div>
+                        <div class="small-4 columns">
+                            <p class="points sumTotal">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pointsRow row">
+            <div class="small-11 small-centered text-left">
+                <div class="small-1 column escParticipantNr">
+                    <p></p>
+                </div>
+                <div class="small-2 column escCountryName">
+                    <p></p>
+                </div>
+                <div class="small-4 column escSongTitle">
+                    <p><i></i></p>
+                </div>
+                <div class="show-for-small-only small-5 column mobileView">
+                    <div class="small-8 columns">
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-microphone"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="soPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-tada"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="shPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-dress"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="coPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-interrobang"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="xfPoints" class="points">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small-4 columns totalPoints">
+                        <p class="points">0</p>
+                    </div>
+                </div>
+                <div class="hide-for-small-only small-5 column">
+                    <div class="row">
+                        <div class="small-2 columns">
+                            <p class="points soPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points shPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points coPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points xfPoints">0</p>
+                        </div>
+                        <div class="small-4 columns">
+                            <p class="points sumTotal">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pointsRow row">
+            <div class="small-11 small-centered text-left">
+                <div class="small-1 column escParticipantNr">
+                    <p></p>
+                </div>
+                <div class="small-2 column escCountryName">
+                    <p></p>
+                </div>
+                <div class="small-4 column escSongTitle">
+                    <p><i></i></p>
+                </div>
+                <div class="show-for-small-only small-5 column mobileView">
+                    <div class="small-8 columns">
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-microphone"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="soPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-tada"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="shPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-dress"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="coPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-interrobang"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="xfPoints" class="points">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small-4 columns totalPoints">
+                        <p class="points">0</p>
+                    </div>
+                </div>
+                <div class="hide-for-small-only small-5 column">
+                    <div class="row">
+                        <div class="small-2 columns">
+                            <p class="points soPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points shPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points coPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points xfPoints">0</p>
+                        </div>
+                        <div class="small-4 columns">
+                            <p class="points sumTotal">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pointsRow row">
+            <div class="small-11 small-centered text-left">
+                <div class="small-1 column escParticipantNr">
+                    <p></p>
+                </div>
+                <div class="small-2 column escCountryName">
+                    <p></p>
+                </div>
+                <div class="small-4 column escSongTitle">
+                    <p><i></i></p>
+                </div>
+                <div class="show-for-small-only small-5 column mobileView">
+                    <div class="small-8 columns">
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-microphone"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="soPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-tada"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="shPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-dress"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="coPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-interrobang"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="xfPoints" class="points">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small-4 columns totalPoints">
+                        <p class="points">0</p>
+                    </div>
+                </div>
+                <div class="hide-for-small-only small-5 column">
+                    <div class="row">
+                        <div class="small-2 columns">
+                            <p class="points soPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points shPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points coPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points xfPoints">0</p>
+                        </div>
+                        <div class="small-4 columns">
+                            <p class="points sumTotal">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pointsRow row">
+            <div class="small-11 small-centered text-left">
+                <div class="small-1 column escParticipantNr">
+                    <p></p>
+                </div>
+                <div class="small-2 column escCountryName">
+                    <p></p>
+                </div>
+                <div class="small-4 column escSongTitle">
+                    <p><i></i></p>
+                </div>
+                <div class="show-for-small-only small-5 column mobileView">
+                    <div class="small-8 columns">
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-microphone"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="soPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-tada"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="shPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-dress"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="coPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-interrobang"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="xfPoints" class="points">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small-4 columns totalPoints">
+                        <p class="points">0</p>
+                    </div>
+                </div>
+                <div class="hide-for-small-only small-5 column">
+                    <div class="row">
+                        <div class="small-2 columns">
+                            <p class="points soPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points shPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points coPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points xfPoints">0</p>
+                        </div>
+                        <div class="small-4 columns">
+                            <p class="points sumTotal">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pointsRow row">
+            <div class="small-11 small-centered text-left">
+                <div class="small-1 column escParticipantNr">
+                    <p></p>
+                </div>
+                <div class="small-2 column escCountryName">
+                    <p></p>
+                </div>
+                <div class="small-4 column escSongTitle">
+                    <p><i></i></p>
+                </div>
+                <div class="show-for-small-only small-5 column mobileView">
+                    <div class="small-8 columns">
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-microphone"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="soPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-tada"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="shPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-dress"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="coPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-interrobang"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="xfPoints" class="points">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small-4 columns totalPoints">
+                        <p class="points">0</p>
+                    </div>
+                </div>
+                <div class="hide-for-small-only small-5 column">
+                    <div class="row">
+                        <div class="small-2 columns">
+                            <p class="points soPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points shPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points coPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points xfPoints">0</p>
+                        </div>
+                        <div class="small-4 columns">
+                            <p class="points sumTotal">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pointsRow row">
+            <div class="small-11 small-centered text-left">
+                <div class="small-1 column escParticipantNr">
+                    <p></p>
+                </div>
+                <div class="small-2 column escCountryName">
+                    <p></p>
+                </div>
+                <div class="small-4 column escSongTitle">
+                    <p><i></i></p>
+                </div>
+                <div class="show-for-small-only small-5 column mobileView">
+                    <div class="small-8 columns">
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-microphone"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="soPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-tada"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="shPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-dress"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="coPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-interrobang"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="xfPoints" class="points">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small-4 columns totalPoints">
+                        <p class="points">0</p>
+                    </div>
+                </div>
+                <div class="hide-for-small-only small-5 column">
+                    <div class="row">
+                        <div class="small-2 columns">
+                            <p class="points soPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points shPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points coPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points xfPoints">0</p>
+                        </div>
+                        <div class="small-4 columns">
+                            <p class="points sumTotal">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pointsRow row">
+            <div class="small-11 small-centered text-left">
+                <div class="small-1 column escParticipantNr">
+                    <p></p>
+                </div>
+                <div class="small-2 column escCountryName">
+                    <p></p>
+                </div>
+                <div class="small-4 column escSongTitle">
+                    <p><i></i></p>
+                </div>
+                <div class="show-for-small-only small-5 column mobileView">
+                    <div class="small-8 columns">
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-microphone"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="soPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-tada"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="shPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-dress"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="coPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-interrobang"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="xfPoints" class="points">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small-4 columns totalPoints">
+                        <p class="points">0</p>
+                    </div>
+                </div>
+                <div class="hide-for-small-only small-5 column">
+                    <div class="row">
+                        <div class="small-2 columns">
+                            <p class="points soPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points shPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points coPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points xfPoints">0</p>
+                        </div>
+                        <div class="small-4 columns">
+                            <p class="points sumTotal">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pointsRow row">
+            <div class="small-11 small-centered text-left">
+                <div class="small-1 column escParticipantNr">
+                    <p></p>
+                </div>
+                <div class="small-2 column escCountryName">
+                    <p></p>
+                </div>
+                <div class="small-4 column escSongTitle">
+                    <p><i></i></p>
+                </div>
+                <div class="show-for-small-only small-5 column mobileView">
+                    <div class="small-8 columns">
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-microphone"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="soPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-tada"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="shPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-dress"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="coPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-interrobang"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="xfPoints" class="points">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small-4 columns totalPoints">
+                        <p class="points">0</p>
+                    </div>
+                </div>
+                <div class="hide-for-small-only small-5 column">
+                    <div class="row">
+                        <div class="small-2 columns">
+                            <p class="points soPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points shPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points coPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points xfPoints">0</p>
+                        </div>
+                        <div class="small-4 columns">
+                            <p class="points sumTotal">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pointsRow row">
+            <div class="small-11 small-centered text-left">
+                <div class="small-1 column escParticipantNr">
+                    <p></p>
+                </div>
+                <div class="small-2 column escCountryName">
+                    <p></p>
+                </div>
+                <div class="small-4 column escSongTitle">
+                    <p><i></i></p>
+                </div>
+                <div class="show-for-small-only small-5 column mobileView">
+                    <div class="small-8 columns">
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-microphone"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="soPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-tada"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="shPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-dress"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="coPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-interrobang"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="xfPoints" class="points">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small-4 columns totalPoints">
+                        <p class="points">0</p>
+                    </div>
+                </div>
+                <div class="hide-for-small-only small-5 column">
+                    <div class="row">
+                        <div class="small-2 columns">
+                            <p class="points soPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points shPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points coPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points xfPoints">0</p>
+                        </div>
+                        <div class="small-4 columns">
+                            <p class="points sumTotal">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pointsRow row">
+            <div class="small-11 small-centered text-left">
+                <div class="small-1 column escParticipantNr">
+                    <p></p>
+                </div>
+                <div class="small-2 column escCountryName">
+                    <p></p>
+                </div>
+                <div class="small-4 column escSongTitle">
+                    <p><i></i></p>
+                </div>
+                <div class="show-for-small-only small-5 column mobileView">
+                    <div class="small-8 columns">
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-microphone"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="soPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-tada"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="shPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-dress"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="coPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-interrobang"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="xfPoints" class="points">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small-4 columns totalPoints">
+                        <p class="points">0</p>
+                    </div>
+                </div>
+                <div class="hide-for-small-only small-5 column">
+                    <div class="row">
+                        <div class="small-2 columns">
+                            <p class="points soPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points shPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points coPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points xfPoints">0</p>
+                        </div>
+                        <div class="small-4 columns">
+                            <p class="points sumTotal">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pointsRow row">
+            <div class="small-11 small-centered text-left">
+                <div class="small-1 column escParticipantNr">
+                    <p></p>
+                </div>
+                <div class="small-2 column escCountryName">
+                    <p></p>
+                </div>
+                <div class="small-4 column escSongTitle">
+                    <p><i></i></p>
+                </div>
+                <div class="show-for-small-only small-5 column mobileView">
+                    <div class="small-8 columns">
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-microphone"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="soPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-tada"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="shPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-dress"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="coPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-interrobang"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="xfPoints" class="points">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small-4 columns totalPoints">
+                        <p class="points">0</p>
+                    </div>
+                </div>
+                <div class="hide-for-small-only small-5 column">
+                    <div class="row">
+                        <div class="small-2 columns">
+                            <p class="points soPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points shPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points coPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points xfPoints">0</p>
+                        </div>
+                        <div class="small-4 columns">
+                            <p class="points sumTotal">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pointsRow row">
+            <div class="small-11 small-centered text-left">
+                <div class="small-1 column escParticipantNr">
+                    <p></p>
+                </div>
+                <div class="small-2 column escCountryName">
+                    <p></p>
+                </div>
+                <div class="small-4 column escSongTitle">
+                    <p><i></i></p>
+                </div>
+                <div class="show-for-small-only small-5 column mobileView">
+                    <div class="small-8 columns">
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-microphone"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="soPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-tada"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="shPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-dress"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="coPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-interrobang"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="xfPoints" class="points">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small-4 columns totalPoints">
+                        <p class="points">0</p>
+                    </div>
+                </div>
+                <div class="hide-for-small-only small-5 column">
+                    <div class="row">
+                        <div class="small-2 columns">
+                            <p class="points soPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points shPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points coPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points xfPoints">0</p>
+                        </div>
+                        <div class="small-4 columns">
+                            <p class="points sumTotal">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pointsRow row">
+            <div class="small-11 small-centered text-left">
+                <div class="small-1 column escParticipantNr">
+                    <p></p>
+                </div>
+                <div class="small-2 column escCountryName">
+                    <p></p>
+                </div>
+                <div class="small-4 column escSongTitle">
+                    <p><i></i></p>
+                </div>
+                <div class="show-for-small-only small-5 column mobileView">
+                    <div class="small-8 columns">
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-microphone"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="soPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-tada"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="shPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-dress"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="coPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-interrobang"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="xfPoints" class="points">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small-4 columns totalPoints">
+                        <p class="points">0</p>
+                    </div>
+                </div>
+                <div class="hide-for-small-only small-5 column">
+                    <div class="row">
+                        <div class="small-2 columns">
+                            <p class="points soPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points shPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points coPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points xfPoints">0</p>
+                        </div>
+                        <div class="small-4 columns">
+                            <p class="points sumTotal">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pointsRow row">
+            <div class="small-11 small-centered text-left">
+                <div class="small-1 column escParticipantNr">
+                    <p></p>
+                </div>
+                <div class="small-2 column escCountryName">
+                    <p></p>
+                </div>
+                <div class="small-4 column escSongTitle">
+                    <p><i></i></p>
+                </div>
+                <div class="show-for-small-only small-5 column mobileView">
+                    <div class="small-8 columns">
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-microphone"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="soPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-tada"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="shPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-dress"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="coPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-interrobang"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="xfPoints" class="points">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small-4 columns totalPoints">
+                        <p class="points">0</p>
+                    </div>
+                </div>
+                <div class="hide-for-small-only small-5 column">
+                    <div class="row">
+                        <div class="small-2 columns">
+                            <p class="points soPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points shPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points coPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points xfPoints">0</p>
+                        </div>
+                        <div class="small-4 columns">
+                            <p class="points sumTotal">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pointsRow row">
+            <div class="small-11 small-centered text-left">
+                <div class="small-1 column escParticipantNr">
+                    <p></p>
+                </div>
+                <div class="small-2 column escCountryName">
+                    <p></p>
+                </div>
+                <div class="small-4 column escSongTitle">
+                    <p><i></i></p>
+                </div>
+                <div class="show-for-small-only small-5 column mobileView">
+                    <div class="small-8 columns">
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-microphone"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="soPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-tada"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="shPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-dress"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="coPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-interrobang"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="xfPoints" class="points">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small-4 columns totalPoints">
+                        <p class="points">0</p>
+                    </div>
+                </div>
+                <div class="hide-for-small-only small-5 column">
+                    <div class="row">
+                        <div class="small-2 columns">
+                            <p class="points soPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points shPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points coPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points xfPoints">0</p>
+                        </div>
+                        <div class="small-4 columns">
+                            <p class="points sumTotal">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pointsRow row">
+            <div class="small-11 small-centered text-left">
+                <div class="small-1 column escParticipantNr">
+                    <p></p>
+                </div>
+                <div class="small-2 column escCountryName">
+                    <p></p>
+                </div>
+                <div class="small-4 column escSongTitle">
+                    <p><i></i></p>
+                </div>
+                <div class="show-for-small-only small-5 column mobileView">
+                    <div class="small-8 columns">
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-microphone"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="soPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-tada"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="shPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-dress"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="coPoints" class="points">0</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="small-6 columns"> <i class="em em-interrobang"></i> </div>
+                            <div class="small-6 columns">
+                                <p id="xfPoints" class="points">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small-4 columns totalPoints">
+                        <p class="points">0</p>
+                    </div>
+                </div>
+                <div class="hide-for-small-only small-5 column">
+                    <div class="row">
+                        <div class="small-2 columns">
+                            <p class="points soPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points shPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points coPoints">0</p>
+                        </div>
+                        <div class="small-2 columns">
+                            <p class="points xfPoints">0</p>
+                        </div>
+                        <div class="small-4 columns">
+                            <p class="points sumTotal">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer> </footer>
+    <!-- Data -->
+    <script type="text/javascript" src="_data/esc2017info.js"></script>
+    <!-- Libraries -->
+    <script src="https://www.gstatic.com/firebasejs/3.7.8/firebase.js"></script>
+    <!--  Javascript -->
+    <script type="text/javascript" src="_js/app.js"></script>
+    <script type="text/javascript" src="_js/firebaseConfig.js"></script>
+    <!--<script type="text/javascript" src="_js/addPrinciples.js"></script>-->
+</body>
+
+</html>
