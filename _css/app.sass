@@ -186,24 +186,26 @@ input[type='text']
     &::-moz-placeholder,
     &:-ms-input-placeholder,
     &:-moz-placeholder
+        outline: none
 
 input[type='range']
-    width: 85%
-    @media (min-width: 1100px)
-        width: 94%
-
-input[type='range'], ::-moz-range-track, ::-ms-track
-    -webkit-apperance: none
-    background-color: #0c0
-    width: 80%
-    height: 10px
-
-input[type='range'], ::-webkit-slider-thumb, ::-moz-range-thumb, ::-ms-thumb
-    -webkit-apperance: none
-    background-color: #f60
-    width: 10px
-    height: 20px
-    border-radius: 30px
+    width: 88%
+    ::-moz-range-track,
+    ::-ms-track
+        -webkit-apperance: none
+        background-color: #0c0
+        width: 90%
+        height: 10px
+    ::-webkit-slider-thumb,
+    ::-moz-range-thumb,
+    ::-ms-thumb
+        -webkit-apperance: none
+        background-color: #f60
+        width: 10px
+        height: 20px
+        border-radius: 30px
+    @media (min-width: 1024px)
+        width: 89%
 
 #partySelectSection
     list-style: none

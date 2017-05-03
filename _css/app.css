@@ -159,25 +159,28 @@ input[type='text'] {
     border: none;
     border-bottom: solid 5px #f9ba32;
     transition: border 0.2s; }
+  input[type='text']::-webkit-input-placeholder, input[type='text']::-moz-placeholder, input[type='text']:-ms-input-placeholder, input[type='text']:-moz-placeholder {
+    outline: none; }
 
 input[type='range'] {
-  width: 85%; }
-  @media (min-width: 1100px) {
+  width: 88%; }
+  input[type='range'] ::-moz-range-track,
+  input[type='range'] ::-ms-track {
+    -webkit-apperance: none;
+    background-color: #0c0;
+    width: 90%;
+    height: 10px; }
+  input[type='range'] ::-webkit-slider-thumb,
+  input[type='range'] ::-moz-range-thumb,
+  input[type='range'] ::-ms-thumb {
+    -webkit-apperance: none;
+    background-color: #f60;
+    width: 10px;
+    height: 20px;
+    border-radius: 30px; }
+  @media (min-width: 1024px) {
     input[type='range'] {
-      width: 94%; } }
-
-input[type='range'], ::-moz-range-track, ::-ms-track {
-  -webkit-apperance: none;
-  background-color: #0c0;
-  width: 80%;
-  height: 10px; }
-
-input[type='range'], ::-webkit-slider-thumb, ::-moz-range-thumb, ::-ms-thumb {
-  -webkit-apperance: none;
-  background-color: #f60;
-  width: 10px;
-  height: 20px;
-  border-radius: 30px; }
+      width: 89%; } }
 
 #partySelectSection {
   list-style: none;

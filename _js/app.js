@@ -16,13 +16,13 @@ window.onload = function () {
         console.log('No such user. Create user');
         createNewUser('Arnt', 'Fest1');
     }
-    if (window.location.pathname === '/profile.html') {
+    if (document.querySelector("#topLabel")) {
         addESCInfoToPage();
         updatePointsRows();
         updateProfileName();
-        findNextSong(extractUserInformation('votemgp2017cookie')[2]);
+        var key = extractUserInformation('votemgp2017cookie')[2];
+        findNextSong(key, songNr);
     }
-    else if (window.location.pathname === '/index.html') {}
     if (document.querySelector("#voteButton")) {
         var button = document.querySelector("#voteButton");
         button.onclick = function () {
@@ -291,7 +291,7 @@ function getRandomInt(min, max) {
     var max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min;
 }
-// escapeHtml Function 
+// escapeHtml Function
 // by zrajm - (http://stackoverflow.com/users/351162/zrajm)
 // http://stackoverflow.com/questions/24816/escaping-html-strings-with-jquery
 function escapeInput(text) {
@@ -339,7 +339,15 @@ function getHeight() {
 }
 
 function calculateProgress(progress) {
-    return ((progress + 1) / 26 * 100).toFixed(0);
+    if (progress === 0) {
+        return 0;
+    }
+    if (progress === 25) {
+        return progress + 1;
+    }
+    else {
+        return ((progress) / 26 * 100).toFixed(0);
+    }
 }
 
 function convertToMGPPoints(points) {
