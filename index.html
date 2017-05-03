@@ -106,7 +106,11 @@
                     <option value="10"></option>
                 </datalist>
                 <div id="voteBar">
-                    <h3 id="score" class="text-center">Poengsum: 0</h3> <a id="voteButton" class="large expanded button">Avgi stemme</a> </div>
+                    <h3 id="score" class="text-center">Poengsum: 0</h3>
+                    <a id="voteButton" class="large expanded button progress-button" data-style="shrink" data-horizontal>
+                        Avgi stemme
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -115,8 +119,11 @@
     <script type="text/javascript" src="_data/esc2017info.js"></script>
     <!-- Libraries -->
     <script src="https://www.gstatic.com/firebasejs/3.7.8/firebase.js"></script>
+    <script src="_js/modernizr.custom.js"></script>
+    <script type="text/javascript" src="_js/classie.js"></script>
     <!--  Javascript -->
     <script type="text/javascript" src="_js/app.js"></script>
+    <script type="text/javascript" src="_js/progressButton.js"></script>
     <script type="text/javascript" src="_js/firebaseConfig.js"></script>
     <!--<script type="text/javascript" src="_js/addPrinciples.js"></script>-->
 </body>

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*Colour */
 /*Space */
 /*Typography */
@@ -76,6 +77,47 @@ section {
 #voteBar h3 {
   margin: 2em 0;
   font-weight: 700; }
+#voteBar a.progress-button[disabled], #voteBar a.progress-button[disabled].state-loading {
+  cursor: default; }
+#voteBar a.progress-button[data-horizontal] .progress-inner {
+  top: 0;
+  width: 0;
+  height: 100%;
+  -webkit-transition: width 0.3s, opacity 0.3s;
+  transition: width 0.3s, opacity 0.3s; }
+#voteBar a.progress-button[data-vertical] .progress-inner {
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  -webkit-transition: height 0.3s, opacity 0.3s;
+  transition: height 0.3s, opacity 0.3s; }
+#voteBar a.progress-button .progress {
+  background: #148544; }
+#voteBar a.progress-button .progress-inner {
+  position: absolute;
+  left: 0;
+  background: #0e7138; }
+#voteBar a.progress-button .content {
+  position: relative;
+  display: block; }
+  #voteBar a.progress-button .content::before, #voteBar a.progress-button .content::after {
+    position: absolute;
+    right: 20px;
+    color: #0e7138;
+    font-family: "icomoon";
+    opacity: 0;
+    -webkit-transition: opacity 0.3s 0.3s;
+    transition: opacity 0.3s 0.3s; }
+  #voteBar a.progress-button .content::before {
+    content: ""; }
+  #voteBar a.progress-button .content::after {
+    content: ""; }
+  #voteBar a.progress-button .content.state-success .content::before, #voteBar a.progress-button .content.state-error .content::after {
+    opacity: 1; }
+
+.notransition {
+  -webkit-transition: none !important;
+  transition: none !important; }
 
 #topNav {
   background: #E5E5E5;
