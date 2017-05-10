@@ -116,15 +116,15 @@ function updateProfileButton()  {
 }
 
 function resetVotePagePoints() {
-    document.querySelector('#songRange').value = 0;
-    document.querySelector('#showRange').value = 0;
-    document.querySelector('#costumeRange').value = 0;
-    document.querySelector('#xFactorRange').value = 0;
-    document.querySelector('#score').innerText = "Poengsum: " + 0;
-    document.querySelector('#songRangeOutput').innerText = 0;
-    document.querySelector('#showRangeOutput').innerText = 0;
-    document.querySelector('#costumeRangeOutput').innerText = 0;
-    document.querySelector('#xFactorRangeOutput').innerText = 0;
+    document.querySelector('#songRange').value = 1;
+    document.querySelector('#showRange').value = 1;
+    document.querySelector('#costumeRange').value = 1;
+    document.querySelector('#xFactorRange').value = 1;
+    document.querySelector('#score').innerText = "Poengsum: " + 4;
+    document.querySelector('#songRangeOutput').innerText = 1;
+    document.querySelector('#showRangeOutput').innerText = 1;
+    document.querySelector('#costumeRangeOutput').innerText = 1;
+    document.querySelector('#xFactorRangeOutput').innerText = 1;
 }
 
 function updatePointsRows() {
