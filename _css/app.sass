@@ -19,6 +19,10 @@ $padding: 0.5em
 $font-stack: Playfair Display, serif
 $font-base-size: 1em
 
+*,
+    &:after, &::before
+        box-sizing: border-box
+
 body, h1, h2, h3, h4, h5, h6
     font-family: $font-stack
     color: $primary-text-color-dark
@@ -92,11 +96,100 @@ section
         .totalPoints p
             font-size: 2.5em
             margin-top: 0.3em
-
 #voteBar
     h3
         margin: 2em 0
         font-weight: 700
+
+#button-wrapper
+    // width: 450px
+    text-align: center
+    // padding: 0 100px
+    margin-left: 50%
+    box-sizing: border-box
+    -webkit-transition: .3s all ease .3s
+    transition: .3s all ease .3s
+    -webkit-transform: translate3d(-50%, -50%, 0)
+    transform: translate3d(-50%, -50%, 0)
+
+
+button
+    width: 100%
+    background: #8e44ad
+    border: none
+    border-radius: 50px
+    padding: 5px 0
+    cursor: pointer
+    -webkit-transition: .3s all ease
+    transition: .3s all ease
+    position: relative
+    &:hover
+        background: $accent-color
+        p
+            color: $primary-text-color-dark
+
+button p
+    color: white
+    font-size: 18px
+    font-weight: 400
+    line-height: 40px
+    max-height: 40px
+    -webkit-transition: .3s all ease
+    transition: .3s all ease
+
+
+button .fill
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    width: 0%
+    background: #8e44ad
+    border-radius: 50px
+
+
+button .fa
+    font-size: 25px
+    color: white
+    line-height: 50px
+    -webkit-transform: scale(0)
+    -ms-transform: scale(0)
+    transform: scale(0)
+
+
+#button-wrapper.clicked
+    padding: 0
+
+
+#button-wrapper.clicked button
+    background: #ccc
+    margin-top: 25px
+
+
+#button-wrapper.clicked button p
+    max-height: 0
+    overflow: hidden
+
+
+#button-wrapper.clicked button .fill
+    width: 100%
+    -webkit-transition: .3s all ease .3s
+    transition: 2s all ease .6s
+
+
+#button-wrapper.success button
+    // margin: 0
+    // padding: 25px
+    // width: 50px
+
+
+#button-wrapper.success button .fa
+    -webkit-transform: scale(1)
+    -ms-transform: scale(1)
+    transform: scale(1)
+    -webkit-transition: .3s all ease .3s
+    transition: .3s all ease .3s
 
 #topNav
     background: $primary-color-light

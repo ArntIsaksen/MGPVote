@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vote MGP2017 | Vote</title>
     <!-- CSS & Typeface -->
-    <link rel="stylesheet" href="_css/foundation.css">
-    <link rel="stylesheet" href="_css/app.css">
+    <link rel="stylesheet" href="_css/foundation.css" />
+    <link rel="stylesheet" href="_css/app.css" />
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
     <!-- Google Analytics -->
     <script>
@@ -28,7 +28,7 @@
     <!-- End Google Analytics -->
 </head>
 
-<body>
+<body id="top">
     <section>
         <div id="topNav" class="expanded row">
             <p class="text-center">Du er registrert som <strong>
@@ -104,8 +104,21 @@
                     <option value="9"></option>
                     <option value="10"></option>
                 </datalist>
+<<<<<<< HEAD
                 <div id="voteBar">
                     <h3 id="score" class="text-center">Poengsum: 4</h3> <a id="voteButton" class="large expanded button">Avgi stemme</a> </div>
+=======
+                <div id="voteBar" class="row">
+                    <h3 id="score" class="text-center">Poengsum: 0</h3>
+                    <div id="button-wrapper" class="row">
+                      <button id="voteButton">
+                          <p>Stem</p>
+                          <div class="fill"></div>
+                          <div class="fa fa-check"></div>
+                      </button>
+                    </div>
+                </div>
+>>>>>>> vote-button-animation
             </div>
         </div>
     </section>
@@ -115,8 +128,8 @@
     <!-- Libraries -->
     <script src="https://www.gstatic.com/firebasejs/3.7.8/firebase.js"></script>
     <!--  Javascript -->
-    <script type="text/javascript" src="_js/app.js"></script>
     <script type="text/javascript" src="_js/firebaseConfig.js"></script>
+    <script type="text/javascript" src="_js/app.js"></script>
     <!--<script type="text/javascript" src="_js/addPrinciples.js"></script>-->
 </body>
 
