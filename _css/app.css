@@ -1,7 +1,9 @@
-@charset "UTF-8";
 /*Colour */
 /*Space */
 /*Typography */
+*:after, *::before {
+  box-sizing: border-box; }
+
 body, h1, h2, h3, h4, h5, h6 {
   font-family: Playfair Display, serif;
   color: #212121; }
@@ -77,47 +79,80 @@ section {
 #voteBar h3 {
   margin: 2em 0;
   font-weight: 700; }
-#voteBar a.progress-button[disabled], #voteBar a.progress-button[disabled].state-loading {
-  cursor: default; }
-#voteBar a.progress-button[data-horizontal] .progress-inner {
-  top: 0;
-  width: 0;
-  height: 100%;
-  -webkit-transition: width 0.3s, opacity 0.3s;
-  transition: width 0.3s, opacity 0.3s; }
-#voteBar a.progress-button[data-vertical] .progress-inner {
-  bottom: 0;
-  width: 100%;
-  height: 0;
-  -webkit-transition: height 0.3s, opacity 0.3s;
-  transition: height 0.3s, opacity 0.3s; }
-#voteBar a.progress-button .progress {
-  background: #148544; }
-#voteBar a.progress-button .progress-inner {
-  position: absolute;
-  left: 0;
-  background: #0e7138; }
-#voteBar a.progress-button .content {
-  position: relative;
-  display: block; }
-  #voteBar a.progress-button .content::before, #voteBar a.progress-button .content::after {
-    position: absolute;
-    right: 20px;
-    color: #0e7138;
-    font-family: "icomoon";
-    opacity: 0;
-    -webkit-transition: opacity 0.3s 0.3s;
-    transition: opacity 0.3s 0.3s; }
-  #voteBar a.progress-button .content::before {
-    content: ""; }
-  #voteBar a.progress-button .content::after {
-    content: ""; }
-  #voteBar a.progress-button .content.state-success .content::before, #voteBar a.progress-button .content.state-error .content::after {
-    opacity: 1; }
 
-.notransition {
-  -webkit-transition: none !important;
-  transition: none !important; }
+#button-wrapper {
+  text-align: center;
+  margin-left: 50%;
+  box-sizing: border-box;
+  -webkit-transition: 0.3s all ease 0.3s;
+  transition: 0.3s all ease 0.3s;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0); }
+
+button {
+  width: 100%;
+  background: #8e44ad;
+  border: none;
+  border-radius: 50px;
+  padding: 5px 0;
+  cursor: pointer;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+  position: relative; }
+  button:hover {
+    background: #f9ba32; }
+    button:hover p {
+      color: #212121; }
+
+button p {
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 40px;
+  max-height: 40px;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease; }
+
+button .fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 0%;
+  background: #8e44ad;
+  border-radius: 50px; }
+
+button .fa {
+  font-size: 25px;
+  color: white;
+  line-height: 50px;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0); }
+
+#button-wrapper.clicked {
+  padding: 0; }
+
+#button-wrapper.clicked button {
+  background: #ccc;
+  margin-top: 25px; }
+
+#button-wrapper.clicked button p {
+  max-height: 0;
+  overflow: hidden; }
+
+#button-wrapper.clicked button .fill {
+  width: 100%;
+  -webkit-transition: 0.3s all ease 0.3s;
+  transition: 2s all ease 0.6s; }
+
+#button-wrapper.success button .fa {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.3s all ease 0.3s;
+  transition: 0.3s all ease 0.3s; }
 
 #topNav {
   background: #E5E5E5;

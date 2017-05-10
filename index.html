@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vote MGP2017 | Vote</title>
     <!-- CSS & Typeface -->
-    <link rel="stylesheet" href="_css/foundation.css">
-    <link rel="stylesheet" href="_css/app.css">
+    <link rel="stylesheet" href="_css/foundation.css" />
+    <link rel="stylesheet" href="_css/app.css" />
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
     <!-- Google Analytics -->
     <script>
@@ -28,7 +28,7 @@
     <!-- End Google Analytics -->
 </head>
 
-<body>
+<body id="top">
     <section>
         <div id="topNav" class="expanded row">
             <p class="text-center">Du er registrert som <strong>
@@ -105,11 +105,15 @@
                     <option value="9"></option>
                     <option value="10"></option>
                 </datalist>
-                <div id="voteBar">
+                <div id="voteBar" class="row">
                     <h3 id="score" class="text-center">Poengsum: 0</h3>
-                    <a id="voteButton" class="large expanded button progress-button" data-style="shrink" data-horizontal>
-                        Avgi stemme
-                    </a>
+                    <div id="button-wrapper" class="row">
+                      <button id="voteButton">
+                          <p>Stem</p>
+                          <div class="fill"></div>
+                          <div class="fa fa-check"></div>
+                      </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -119,12 +123,9 @@
     <script type="text/javascript" src="_data/esc2017info.js"></script>
     <!-- Libraries -->
     <script src="https://www.gstatic.com/firebasejs/3.7.8/firebase.js"></script>
-    <script src="_js/modernizr.custom.js"></script>
-    <script type="text/javascript" src="_js/classie.js"></script>
     <!--  Javascript -->
-    <script type="text/javascript" src="_js/app.js"></script>
-    <script type="text/javascript" src="_js/progressButton.js"></script>
     <script type="text/javascript" src="_js/firebaseConfig.js"></script>
+    <script type="text/javascript" src="_js/app.js"></script>
     <!--<script type="text/javascript" src="_js/addPrinciples.js"></script>-->
 </body>
 

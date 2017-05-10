@@ -1,21 +1,35 @@
 var database;
 var userRef;
 var pointsRef;
+var partyRef;
 var songNr = 0;
 window.onload = function () {
     firebase.initializeApp(firebaseConfig);
     database = firebase.database();
     userRef = database.ref('users');
     pointsRef = database.ref('points');
+    partyRef = database.ref('parties');
+    // Check for user.
     if (userExists() !== null) {
         console.log('Found user: ' + userExists());
         findNextSong(extractUserInformation('votemgp2017cookie')[2]);
-        /*createCookie('votemgp2017cookie', '', -1);*/
+    } else {
+        if (window.location.pathname !== '/party.html' && window.location.pathname !== '/start.html') {
+            window.location.pathname = '/start.html';
+        }
+        if (document.querySelector('#registerButton')) {
+            var button = document.querySelector("#registerButton");
+            button.onclick = function () {
+                var party = document.querySelector('input[name="partyGroup"]:checked').value;
+                var name = document.querySelector('input[name="nameBox"]').value;
+                console.log('name: ' + name);
+                console.log('party: ' + party);
+                createNewUser(escapeInput(name), escapeInput(party));
+                window.location.href = 'index.html';
+            }
+        }
     }
-    else {
-        console.log('No such user. Create user');
-        createNewUser('Arnt', 'Fest1');
-    }
+    // Check for overview page.
     if (document.querySelector("#topLabel")) {
         addESCInfoToPage();
         updatePointsRows();
@@ -23,12 +37,26 @@ window.onload = function () {
         var key = extractUserInformation('votemgp2017cookie')[2];
         findNextSong(key, songNr);
     }
+    // Check for vote page & animate
     if (document.querySelector("#voteButton")) {
         var button = document.querySelector("#voteButton");
         button.onclick = function () {
             var key = extractUserInformation('votemgp2017cookie')[2];
             sendPointsToDatabase(key, songNr);
             findNextSong(key, songNr);
+            var parent = button.parentElement;
+            parent.classList.add("clicked");
+            setTimeout((function() {
+                parent.classList.add("success");
+            }), 2600);
+            setTimeout((function() {
+                parent.classList = 'row';
+            }), 2600);
+            setTimeout((function() {
+                document.querySelector('#top').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }), 2600);
         }
     }
 }
@@ -147,9 +175,25 @@ function updatePointsRows() {
         };
     });
 }
+
+function updatePartyList() {
+
+}
 // ---                --- //
 // *** User functions *** //
 // ---                --- //
+function getUserDataFromForm() {
+    var button = document.querySelector("#registerButton");
+    button.onclick = function () {
+        var party = document.querySelector('input[name="partyGroup"]:checked').value;
+        var name = document.querySelector('input[name="nameBox"]').value;
+        console.log('name: ' + name);
+        console.log('party: ' + party);
+        createNewUser(escapeInput(name), escapeInput(party));
+    }
+    window.location.href = 'index.html';
+}
+
 function createNewUser(_userName, _party) {
     var p = pointsRef.push(createDataStructure(26));
     var generatedID = generateID(escapeInput(_userName), escapeInput(_party), p.key);
@@ -354,4 +398,71 @@ function convertToMGPPoints(points) {
     if (points === 9) return 10;
     else if (points === 10) return 12;
     else return points;
+}
+
+/**
+    Smoothly scroll element to the given target (element.scrollTop)
+    for the given duration
+
+    Returns a promise that's fulfilled when done, or rejected if
+    interrupted
+ */
+ function smoothScrollTo(element, target, duration) {
+    target = Math.round(target);
+    duration = Math.round(duration);
+    if (duration < 0) {
+        return Promise.reject("bad duration");
+    }
+    if (duration === 0) {
+        element.scrollTop = target;
+        return Promise.resolve();
+    }
+
+    var start_time = Date.now();
+    var end_time = start_time + duration;
+
+    var start_top = element.scrollTop;
+    var distance = target - start_top;
+    // based on http://en.wikipedia.org/wiki/Smoothstep
+    var smooth_step = function(start, end, point) {
+        if(point <= start) { return 0; }
+        if(point >= end) { return 1; }
+        var x = (point - start) / (end - start); // interpolation
+        return x*x*(3 - 2*x);
+    }
+    return new Promise(function(resolve, reject) {
+        // This is to keep track of where the element's scrollTop is
+        // supposed to be, based on what we're doing
+        var previous_top = element.scrollTop;
+        // This is like a think function from a game loop
+        var scroll_frame = function() {
+            if(element.scrollTop != previous_top) {
+                reject("interrupted");
+                return;
+            }
+            // set the scrollTop for this frame
+            var now = Date.now();
+            var point = smooth_step(start_time, end_time, now);
+            var frameTop = Math.round(start_top + (distance * point));
+            element.scrollTop = frameTop;
+            // check if we're done!
+            if(now >= end_time) {
+                resolve();
+                return;
+            }
+            // If we were supposed to scroll but didn't, then we
+            // probably hit the limit, so consider it done; not
+            // interrupted.
+            if(element.scrollTop === previous_top
+                && element.scrollTop !== frameTop) {
+                resolve();
+                return;
+            }
+            previous_top = element.scrollTop;
+            // schedule next frame for execution
+            setTimeout(scroll_frame, 0);
+        }
+        // boostrap the animation process
+        setTimeout(scroll_frame, 0);
+    });
 }
