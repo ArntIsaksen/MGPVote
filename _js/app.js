@@ -59,6 +59,9 @@ window.onload = function () {
             }), 2600);
         }
     }
+    if (document.querySelector('#registerPartyButton')) {
+        getPartyDataFromForm()
+    }
 }
 
 function test() {}
@@ -144,15 +147,15 @@ function updateProfileButton()  {
 }
 
 function resetVotePagePoints() {
-    document.querySelector('#songRange').value = 1;
-    document.querySelector('#showRange').value = 1;
-    document.querySelector('#costumeRange').value = 1;
-    document.querySelector('#xFactorRange').value = 1;
-    document.querySelector('#score').innerText = "Poengsum: " + 4;
-    document.querySelector('#songRangeOutput').innerText = 1;
-    document.querySelector('#showRangeOutput').innerText = 1;
-    document.querySelector('#costumeRangeOutput').innerText = 1;
-    document.querySelector('#xFactorRangeOutput').innerText = 1;
+    document.querySelector('#songRange').value = 0;
+    document.querySelector('#showRange').value = 0;
+    document.querySelector('#costumeRange').value = 0;
+    document.querySelector('#xFactorRange').value = 0;
+    document.querySelector('#score').innerText = "Poengsum: " + 0;
+    document.querySelector('#songRangeOutput').innerText = 0;
+    document.querySelector('#showRangeOutput').innerText = 0;
+    document.querySelector('#costumeRangeOutput').innerText = 0;
+    document.querySelector('#xFactorRangeOutput').innerText = 0;
 }
 
 function updatePointsRows() {
@@ -182,6 +185,18 @@ function updatePartyList() {
 // ---                --- //
 // *** User functions *** //
 // ---                --- //
+function getPartyDataFromForm() {
+    var button = document.querySelector("#registerPartyButton");
+    button.onclick = function () {
+        console.log('Part button clicked!');
+        var partyName = document.querySelector('input[name="partyNameBox"]').value;
+        var host = document.querySelector('input[name="hostNameBox"]').value;
+        console.log('host: ' + host);
+        console.log('partyName: ' + partyName);
+        addPartiesToDatabase(escapeInput(partyName), escapeInput(host));
+    }
+}
+
 function getUserDataFromForm() {
     var button = document.querySelector("#registerButton");
     button.onclick = function () {
@@ -203,6 +218,7 @@ function createNewUser(_userName, _party) {
         , id: generatedID
     };
     var u = userRef.push(data);
+    console.log('pused user: ' + u);
     createCookie('votemgp2017cookie', generatedID, 1);
 }
 
@@ -306,6 +322,14 @@ function sendPointsToDatabase(_key, _nr) {
     var total = song + show + costume + xFactor;
     setPoints(_key, _nr, song, show, costume, xFactor, total);
     resetVotePagePoints();
+}
+
+function addPartiesToDatabase(_partyName, _host) {
+    console.log('Add party to database.');
+    database.ref('parties').push({
+        partyName: _partyName,
+        host: _host
+    });
 }
 
 function findNextSong(_key) {
