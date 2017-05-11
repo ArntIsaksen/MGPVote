@@ -29,6 +29,9 @@ window.onload = function () {
             }
         }
     }
+    if (document.querySelector('#registerButton')) {
+        updatePartyList()
+    }
     // Check for overview page.
     if (document.querySelector("#topLabel")) {
         addESCInfoToPage();
@@ -180,8 +183,46 @@ function updatePointsRows() {
 }
 
 function updatePartyList() {
-
+    database.ref('parties').once('value').then(function (snapshot) {
+        console.log(snapshot.val());
+        var partiesFromDB = snapshot.val();
+        var keys = Object.keys(partiesFromDB);
+        for (var i = 0; i < keys.length; i++) {
+            var k = keys[i];
+            var partyName = partiesFromDB[k].partyName;
+            var host = partiesFromDB[k].host;
+            var partyListNode = createPartyListNode(partyName, host);
+            document.querySelector('#partySelectSection').appendChild(partyListNode);
+            console.log(partyName, host, keys[i]);
+        }
+    });
 }
+function createPartyListNode(_partyName, _host) {
+    var listElement = document.createElement('li');
+    var inputElement = document.createElement('input');
+    inputElement.setAttribute('type', 'radio');
+    inputElement.setAttribute('name', 'partyGroup');
+    inputElement.setAttribute('value', _partyName);
+    var div = document.createElement('div');
+    var span = document.createElement('span');
+    span.innerText = _partyName;
+    var p = document.createElement('p');
+    p.className = 'partyHost';
+    p.innerText = _host;
+    div.appendChild(span);
+    div.appendChild(p);
+    listElement.appendChild(inputElement);
+    listElement.appendChild(div);
+    return listElement;
+}
+
+// <li>
+//     <input type="radio" name="partyGroup" value="Fest1">
+//     <div class=""> <span>Fest 1</span>
+//         <p class="partyHost">Vert 1</p>
+//     </div>
+// </li>
+
 // ---                --- //
 // *** User functions *** //
 // ---                --- //
