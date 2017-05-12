@@ -3,6 +3,8 @@ var userRef;
 var pointsRef;
 var partyRef;
 var songNr = 0;
+// var prePath = '/projects/votemgp';
+var prePath = '';
 window.onload = function () {
     firebase.initializeApp(firebaseConfig);
     database = firebase.database();
@@ -13,10 +15,13 @@ window.onload = function () {
     if (userExists() !== null) {
         console.log('Found user: ' + userExists());
         findNextSong(extractUserInformation('votemgp2017cookie')[2]);
+    // If user does not exist
     } else {
-        if (window.location.pathname !== '/party.html' && window.location.pathname !== '/start.html') {
-            window.location.pathname = '/start.html';
+        // Send user to register page (unless they are registering a party).
+        if (window.location.pathname !== (prePath + '/party.html') && window.location.pathname !== (prePath + '/start.html')) {
+            window.location.pathname = (prePath + '/start.html');
         }
+        // Get information from user.
         if (document.querySelector('#registerButton')) {
             var button = document.querySelector("#registerButton");
             button.onclick = function () {
@@ -25,7 +30,7 @@ window.onload = function () {
                 console.log('name: ' + name);
                 console.log('party: ' + party);
                 createNewUser(escapeInput(name), escapeInput(party));
-                window.location.href = 'index.html';
+                window.location.href = '/index.html';
             }
         }
     }
@@ -40,7 +45,7 @@ window.onload = function () {
         var key = extractUserInformation('votemgp2017cookie')[2];
         findNextSong(key, songNr);
     }
-    // Check for vote page & animate
+    // Check for vote page
     if (document.querySelector("#voteButton")) {
         var button = document.querySelector("#voteButton");
         button.onclick = function () {
@@ -48,6 +53,7 @@ window.onload = function () {
             sendPointsToDatabase(key, songNr);
             findNextSong(key, songNr);
             var parent = button.parentElement;
+            // Animate loading
             parent.classList.add("clicked");
             setTimeout((function() {
                 parent.classList.add("success");
@@ -197,6 +203,7 @@ function updatePartyList() {
         }
     });
 }
+
 function createPartyListNode(_partyName, _host) {
     var listElement = document.createElement('li');
     var inputElement = document.createElement('input');
@@ -215,14 +222,6 @@ function createPartyListNode(_partyName, _host) {
     listElement.appendChild(div);
     return listElement;
 }
-
-// <li>
-//     <input type="radio" name="partyGroup" value="Fest1">
-//     <div class=""> <span>Fest 1</span>
-//         <p class="partyHost">Vert 1</p>
-//     </div>
-// </li>
-
 // ---                --- //
 // *** User functions *** //
 // ---                --- //
@@ -246,8 +245,8 @@ function getUserDataFromForm() {
         console.log('name: ' + name);
         console.log('party: ' + party);
         createNewUser(escapeInput(name), escapeInput(party));
+        window.location.href = '/index.html';
     }
-    window.location.href = 'index.html';
 }
 
 function createNewUser(_userName, _party) {
