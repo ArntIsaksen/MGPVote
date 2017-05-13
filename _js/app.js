@@ -18,7 +18,10 @@ window.onload = function () {
     // If user does not exist
     } else {
         // Send user to register page (unless they are registering a party).
-        if (window.location.pathname !== (prePath + '/party.html') && window.location.pathname !== (prePath + '/start.html')) {
+        if (window.location.pathname !== (prePath + '/party.html') &&
+            window.location.pathname !== (prePath + '/start.html') &&
+            window.location.pathname !== (prePath + '/leaderboard.html')
+        ) {
             window.location.pathname = (prePath + '/start.html');
         }
         // Get information from user.

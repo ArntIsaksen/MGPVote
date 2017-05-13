@@ -1,158 +1,158 @@
 var esc2017info = {
 	"0": {
-		"nation": "Belgia",
-		"nationCode": "be",
-		"title": "What's The Pressure",
-		"artist": "Laura Tesoro"
-	},
-	"1": {
-		"nation": "Tsjekkia",
-		"nationCode": "cz",
-		"title": "I Stand",
-		"artist": "Gabriela Gunčíková"
-	},
-	"2": {
-		"nation": "Nederland",
-		"nationCode": "nl",
-		"title": "Slow Down",
-		"artist": "Douwe Bob"
-	},
-	"3": {
-		"nation": "Aserbajdsjan",
-		"nationCode": "az",
-		"title": "Miracle",
-		"artist": "Samra"
-	},
-	"4": {
-		"nation": "Ungarn",
-		"title": "Pioneer",
-		"nationCode": "hu",
-		"artist": "Freddie"
-	},
-	"5": {
-		"nation": "Italia",
-		"nationCode": "it",
-		"title": "No Degree of Separation",
-		"artist": "Francesca Michielin"
-	},
-	"6": {
 		"nation": "Israel",
 		"nationCode": "il",
-		"title": "Made of Stars",
-		"artist": "Hovi Star"
+		"title": "I Feel Alive",
+		"artist": "IMRI"
 	},
-	"7": {
-		"nation": "Bulgaria",
-		"nationCode": "bg",
-		"title": "If Love Was a Crime",
-		"artist": "Poli Genova"
-	},
-	"8": {
-		"nation": "Sverige",
-		"nationCode": "se",
-		"title": "If I Were Sorry",
-		"artist": "Frans"
-	},
-	"9": {
-		"nation": "Tyskland",
-		"nationCode": "de",
-		"title": "Ghost",
-		"artist": "Jamie-Lee"
-	},
-	"10": {
-		"nation": "Frankrike",
-		"nationCode": "fr",
-		"title": "J'ai cherché",
-		"artist": "Amir"
-	},
-	"11": {
+	"1": {
 		"nation": "Polen",
 		"nationCode": "pl",
-		"title": "Color of Your Life",
-		"artist": "Michał Szpak"
+		"title": "Flashlight",
+		"artist": "Kasia Moś"
 	},
-	"12": {
-		"nation": "Australia",
-		"nationCode": "au",
-		"title": "Sound of Silence",
-		"artist": "Dami Im"
+	"2": {
+		"nation": "Hviterussland",
+		"nationCode": "by",
+		"title": "Story of My Life",
+		"artist": "Naviband"
 	},
-	"13": {
-		"nation": "Kypros",
-		"nationCode": "cy",
-		"title": "Alter Ego",
-		"artist": "Minus One"
-	},
-	"14": {
-		"nation": "Serbia",
-		"nationCode": "rs",
-		"title": "Goodbye (Shelter)",
-		"artist": "Sanja Vučič ZAA"
-	},
-	"15": {
-		"nation": "Litauen",
-		"nationCode": "lt",
-		"title": "I've Been Waiting for This Night",
-		"artist": "Donny Montell"
-	},
-	"16": {
-		"nation": "Kroatia",
-		"nationCode": "hr",
-		"title": "Lighthouse",
-		"artist": "Nina Kraljić"
-	},
-	"17": {
-		"nation": "Russland",
-		"nationCode": "ru",
-		"title": "You Are the Only One",
-		"artist": "Sergej Lazarev"
-	},
-	"18": {
-		"nation": "Spania",
-		"nationCode": "es",
-		"title": "Say Yay!",
-		"artist": "Barei"
-	},
-	"19": {
-		"nation": "Latvia",
-		"nationCode": "lv",
-		"title": "Heartbeat",
-		"artist": "Justs"
-	},
-	"20": {
-		"nation": "Ukraina",
-		"nationCode": "ua",
-		"title": "1944",
-		"artist": "Jamala"
-	},
-	"21": {
-		"nation": "Malta",
-		"nationCode": "mt",
-		"title": "Walk on Water",
-		"artist": "Ira Losco"
-	},
-	"22": {
-		"nation": "Georgia",
-		"nationCode": "ge",
-		"title": "Midnight Gold",
-		"artist": "Nika Kocharov og Young Georgian Lolitaz"
-	},
-	"23": {
+	"3": {
 		"nation": "Østerrike",
 		"nationCode": "at",
-		"title": "Loin d'ici",
-		"artist": "Zoë"
+		"title": "Running on Air",
+		"artist": "Nathan Trent"
 	},
-	"24": {
-		"nation": "Storbritannia",
-		"nationCode": "gb",
-		"title": "You're Not Alone",
-		"artist": "Joe and Jake"
-	},
-	"25": {
+	"4": {
 		"nation": "Armenia",
 		"nationCode": "am",
-		"title": "LoveWave",
-		"artist": "Iveta Mukutsjan"
+		"title": "Fly With Me",
+		"artist": "Artsvik"
+	},
+	"5": {
+		"nation": "Nederland",
+		"nationCode": "nl",
+		"title": "Lights and Shadows",
+		"artist": "O'G3NE"
+	},
+	"6": {
+		"nation": "Moldova",
+		"nationCode": "md",
+		"title": "Hey, Mamma!",
+		"artist": "SunStroke Project"
+	},
+	"7": {
+		"nation": "Ungarn",
+		"nationCode": "hu",
+		"title": "Origo",
+		"artist": "Joci Pápai"
+	},
+	"8": {
+		"nation": "Italia",
+		"nationCode": "it",
+		"title": "Occidentali's Karma",
+		"artist": "Francesco Gabbani"
+	},
+	"9": {
+		"nation": "Danmark",
+		"nationCode": "dk",
+		"title": "Where I Am",
+		"artist": "Anja Nissen"
+	},
+	"10": {
+		"nation": "Portugal",
+		"nationCode": "pt",
+		"title": "Amar pelos dois",
+		"artist": "Salvador Sobral"
+	},
+	"11": {
+		"nation": "Aserbajdsjan",
+		"nationCode": "az",
+		"title": "Skeletons",
+		"artist": "Dihaj"
+	},
+	"12": {
+		"nation": "Kroatia",
+		"nationCode": "hr",
+		"title": "My Friend",
+		"artist": "Jacques Houdek"
+	},
+	"13": {
+		"nation": "Australia",
+		"nationCode": "au",
+		"title": "Don't Come Easy",
+		"artist": "Isaiah"
+	},
+	"14": {
+		"nation": "Hellas",
+		"nationCode": "gr",
+		"title": "This is Love",
+		"artist": "Demy"
+	},
+	"15": {
+		"nation": "Spania",
+		"nationCode": "es",
+		"title": "Do It for Your Lover",
+		"artist": "Manel Navarro"
+	},
+	"16": {
+		"nation": "Norge",
+		"nationCode": "no",
+		"title": "Grab the Moment",
+		"artist": "JOWST"
+	},
+	"17": {
+		"nation": "Storbritannia",
+		"nationCode": "gb",
+		"title": "Never Give Up on You",
+		"artist": "Lucie Jones"
+	},
+	"18": {
+		"nation": "Kypros",
+		"nationCode": "cy",
+		"title": "Gravity",
+		"artist": "Hovig"
+	},
+	"19": {
+		"nation": "Romania",
+		"nationCode": "ro",
+		"title": "Yodel It!",
+		"artist": "Ilinca og Alex Florea"
+	},
+	"20": {
+		"nation": "Tyskland",
+		"nationCode": "de",
+		"title": "Levina",
+		"artist": "Perfect Life"
+	},
+	"21": {
+		"nation": "Ukraina",
+		"nationCode": "ua",
+		"title": "Time",
+		"artist": "O.Torvald"
+	},
+	"22": {
+		"nation": "Belgia",
+		"nationCode": "be",
+		"title": "City Lights",
+		"artist": "Blanche"
+	},
+	"23": {
+		"nation": "Sverige",
+		"nationCode": "se",
+		"title": "I Can't Go On",
+		"artist": "Robin Bengtsson"
+	},
+	"24": {
+		"nation": "Bulgaria",
+		"nationCode": "bg",
+		"title": "Beautiful Mess",
+		"artist": "Kristijan Kostov"
+	},
+	"25": {
+		"nation": "Frankrike",
+		"nationCode": "fr",
+		"title": "Requiem",
+		"artist": "Alma"
 	}
 }
