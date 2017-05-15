@@ -3,8 +3,8 @@ var userRef;
 var pointsRef;
 var partyRef;
 var songNr = 0;
-// var prePath = '/projects/votemgp';
-var prePath = '';
+var prePath = '/projects/votemgp';
+// var prePath = '';
 window.onload = function () {
     firebase.initializeApp(firebaseConfig);
     database = firebase.database();
@@ -33,7 +33,7 @@ window.onload = function () {
                 console.log('name: ' + name);
                 console.log('party: ' + party);
                 createNewUser(escapeInput(name), escapeInput(party));
-                window.location.href = '/index.html';
+                window.location.href = (prePath + '/index.html');
             }
         }
     }
@@ -198,8 +198,9 @@ function updatePartyList() {
         var keys = Object.keys(partiesFromDB);
         for (var i = 0; i < keys.length; i++) {
             var k = keys[i];
-            var partyName = partiesFromDB[k].partyName;
-            var host = partiesFromDB[k].host;
+            var partyName = unEscapeInput(partiesFromDB[k].partyName);
+            console.log(unEscapeInput(partiesFromDB[k].partyName));
+            var host = unEscapeInput(partiesFromDB[k].host);
             var partyListNode = createPartyListNode(partyName, host);
             document.querySelector('#partySelectSection').appendChild(partyListNode);
             console.log(partyName, host, keys[i]);
