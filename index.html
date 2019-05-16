@@ -9,6 +9,7 @@
     <!-- CSS & Typeface -->
     <link rel="stylesheet" href="_css/foundation.css" />
     <link rel="stylesheet" href="_css/app.css" />
+    <link rel="stylesheet" href="_css/custom-radio-set.css" />
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
     <!-- Google Analytics -->
     <script>
@@ -59,53 +60,225 @@
                 <h3><i id="sa" class="em em-microphone"></i>Sang</h3>
                 <p><i>Har den noe musikalsk verdi?</i></p>
                 <div class="row column">
-                    <input id="songRange" type="range" min="1" value="1" max="10" list="tics" oninput="updateOutput(songRange, value)" />
-                    <output for="songRange">
-                        <h3 id="songRangeOutput">1</h3>
-                        <p class="show-for-large">Poeng</p>
-                    </output>
+                    <ul>
+                        <li>
+                            <input type="radio" id="1_1" name="songGroup" value="1" checked>
+                            <label for="1_1">1</label>
+                        </li>
+                    
+                        <li>
+                            <input type="radio" id="1_2" name="songGroup" value="2">
+                            <label for="1_2">2</label>
+                        </li>
+                    
+                        <li>
+                            <input type="radio" id="1_3" name="songGroup" value="3">
+                            <label for="1_3">3</label>
+                        </li>
+                    
+                        <li>
+                            <input type="radio" id="1_4" name="songGroup" value="4">
+                            <label for="1_4">4</label>
+                        </li>
+                    
+                        <li>
+                            <input type="radio" id="1_5" name="songGroup" value="5">
+                            <label for="1_5">5</label>
+                        </li>
+                    
+                        <li>
+                            <input type="radio" id="1_6" name="songGroup" value="6">
+                            <label for="1_6">6</label>
+                        </li>
+                    
+                        <li>
+                            <input type="radio" id="1_7" name="songGroup" value="7">
+                            <label for="1_7">7</label>
+                        </li>
+                    
+                        <li>
+                            <input type="radio" id="1_8" name="songGroup" value="8">
+                            <label for="1_8">8</label>
+                        </li>
+                    
+                        <li>
+                            <input type="radio" id="1_10" name="songGroup" value="10">
+                            <label for="1_10">10</label>
+                        </li>
+                    
+                        <li>
+                            <input type="radio" id="1_12" name="songGroup" value="12">
+                            <label for="1_12">12</label>
+                        </li>
+                    </ul>
                 </div>
                 <h3><i id="sh" class="em em-tada"></i>Show</h3>
                 <p><i>That old razzle-dazzle...</i></p>
                 <div class="row column">
-                    <input id="showRange" type="range" min="1" value="1" max="10" list="tics" oninput="updateOutput(showRange, value)" />
-                    <output for="showRange">
-                        <h3 id="showRangeOutput">1</h3>
-                        <p class="show-for-large">Poeng</p>
-                    </output>
+                    <ul>
+                        <li>
+                            <input type="radio" id="2_1" name="showGroup" value="1" checked>
+                            <label for="2_1">1</label>
+                        </li>
+                
+                        <li>
+                            <input type="radio" id="2_2" name="showGroup" value="2">
+                            <label for="2_2">2</label>
+                        </li>
+                
+                        <li>
+                            <input type="radio" id="2_3" name="showGroup" value="3">
+                            <label for="2_3">3</label>
+                        </li>
+                
+                        <li>
+                            <input type="radio" id="2_4" name="showGroup" value="4">
+                            <label for="2_4">4</label>
+                        </li>
+                
+                        <li>
+                            <input type="radio" id="2_5" name="showGroup" value="5">
+                            <label for="2_5">5</label>
+                        </li>
+                
+                        <li>
+                            <input type="radio" id="2_6" name="showGroup" value="6">
+                            <label for="2_6">6</label>
+                        </li>
+                
+                        <li>
+                            <input type="radio" id="2_7" name="showGroup" value="7">
+                            <label for="2_7">7</label>
+                        </li>
+                
+                        <li>
+                            <input type="radio" id="2_8" name="showGroup" value="8">
+                            <label for="2_8">8</label>
+                        </li>
+                
+                        <li>
+                            <input type="radio" id="2_10" name="showGroup" value="10">
+                            <label for="2_10">10</label>
+                        </li>
+                
+                        <li>
+                            <input type="radio" id="2_12" name="showGroup" value="12">
+                            <label for="2_12">12</label>
+                        </li>
+                    </ul>
                 </div>
                 <h3><i id="ko" class="em em-dress"></i>Kostyme</h3>
                 <p><i>Ser de egentlig ut?</i></p>
                 <div class="row column">
-                    <input id="costumeRange" type="range" min="1" value="1" max="10" list="tics" oninput="updateOutput(costumeRange, value)" />
-                    <output for="costumeRange">
-                        <h3 id="costumeRangeOutput">1</h3>
-                        <p class="show-for-large">Poeng</p>
-                    </output>
+                    <ul>
+                        <li>
+                            <input type="radio" id="3_1" name="costumeGroup" value="1" checked>
+                            <label for="3_1">1</label>
+                        </li>
+                
+                        <li>
+                            <input type="radio" id="3_2" name="costumeGroup" value="2">
+                            <label for="3_2">2</label>
+                        </li>
+                
+                        <li>
+                            <input type="radio" id="3_3" name="costumeGroup" value="3">
+                            <label for="3_3">3</label>
+                        </li>
+                
+                        <li>
+                            <input type="radio" id="3_4" name="costumeGroup" value="4">
+                            <label for="3_4">4</label>
+                        </li>
+                
+                        <li>
+                            <input type="radio" id="3_5" name="costumeGroup" value="5">
+                            <label for="3_5">5</label>
+                        </li>
+                
+                        <li>
+                            <input type="radio" id="3_6" name="costumeGroup" value="6">
+                            <label for="3_6">6</label>
+                        </li>
+                
+                        <li>
+                            <input type="radio" id="3_7" name="costumeGroup" value="7">
+                            <label for="3_7">7</label>
+                        </li>
+                
+                        <li>
+                            <input type="radio" id="3_8" name="costumeGroup" value="8">
+                            <label for="3_8">8</label>
+                        </li>
+                
+                        <li>
+                            <input type="radio" id="3_10" name="costumeGroup" value="10">
+                            <label for="3_10">10</label>
+                        </li>
+                
+                        <li>
+                            <input type="radio" id="3_12" name="costumeGroup" value="12">
+                            <label for="3_12">12</label>
+                        </li>
+                    </ul>
                 </div>
                 <h3><i id="xf" class="em em-interrobang"></i>X-faktor</h3>
                 <p><i>Det derre uhåndgripelige "extra".</i></p>
                 <div class="row column">
-                    <input id="xFactorRange" type="range" min="1" value="1" max="10" list="tics" oninput="updateOutput(xFactorRange, value)" />
-                    <output for="xFactorRange">
-                        <h3 id="xFactorRangeOutput">1</h3>
-                        <p class="show-for-large">Poeng</p>
-                    </output>
+                    <ul>
+                        <li>
+                            <input type="radio" id="4_1" name="xFactorGroup" value="1" checked>
+                            <label for="4_1">1</label>
+                        </li>
+                
+                        <li>
+                            <input type="radio" id="4_2" name="xFactorGroup" value="2">
+                            <label for="4_2">2</label>
+                        </li>
+                
+                        <li>
+                            <input type="radio" id="4_3" name="xFactorGroup" value="3">
+                            <label for="4_3">3</label>
+                        </li>
+                
+                        <li>
+                            <input type="radio" id="4_4" name="xFactorGroup" value="4">
+                            <label for="4_4">4</label>
+                        </li>
+                
+                        <li>
+                            <input type="radio" id="4_5" name="xFactorGroup" value="5">
+                            <label for="4_5">5</label>
+                        </li>
+                
+                        <li>
+                            <input type="radio" id="4_6" name="xFactorGroup" value="6">
+                            <label for="4_6">6</label>
+                        </li>
+                
+                        <li>
+                            <input type="radio" id="4_7" name="xFactorGroup" value="7">
+                            <label for="4_7">7</label>
+                        </li>
+                
+                        <li>
+                            <input type="radio" id="4_8" name="xFactorGroup" value="8">
+                            <label for="4_8">8</label>
+                        </li>
+                
+                        <li>
+                            <input type="radio" id="4_10" name="xFactorGroup" value="10">
+                            <label for="4_10">10</label>
+                        </li>
+                
+                        <li>
+                            <input type="radio" id="4_12" name="xFactorGroup" value="12">
+                            <label for="4_12">12</label>
+                        </li>
+                    </ul>
                 </div>
-                <datalist id="tics">
-                    <option value="1"></option>
-                    <option value="2"></option>
-                    <option value="3"></option>
-                    <option value="4"></option>
-                    <option value="5"></option>
-                    <option value="6"></option>
-                    <option value="7"></option>
-                    <option value="8"></option>
-                    <option value="9"></option>
-                    <option value="10"></option>
-                </datalist>
                 <div id="voteBar" class="row">
-                    <h3 id="score" class="text-center">Poengsum: 4</h3>
+                    <h3 id="score" class="text-center">Poengsum: <span id="listTotal">4</span></h3>
                     <div id="button-wrapper" class="row">
                       <button id="voteButton">
                           <p>Stem</p>

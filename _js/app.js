@@ -3,8 +3,28 @@ var userRef;
 var pointsRef;
 var partyRef;
 var songNr = 0;
-var prePath = '/projects/votemgp';
-// var prePath = '';
+var radios = document.querySelectorAll('input[type=radio]');
+var total = document.querySelector('#listTotal');
+var categories = [
+    {
+        name: "songGroup",
+        value: 1
+    },
+    {
+        name: "showGroup",
+        value: 1
+    },
+    {
+        name: "costumeGroup",
+        value: 1
+    },
+    {
+        name: "xFactorGroup",
+        value: 1
+    }
+];
+// var prePath = '/projects/votemgp';
+var prePath = '';
 window.onload = function () {
     firebase.initializeApp(firebaseConfig);
     database = firebase.database();
@@ -15,13 +35,11 @@ window.onload = function () {
     if (userExists() !== null) {
         console.log('Found user: ' + userExists());
         findNextSong(extractUserInformation('votemgp2017cookie')[2]);
-    // If user does not exist
-    } else {
+        // If user does not exist
+    }
+    else {
         // Send user to register page (unless they are registering a party).
-        if (window.location.pathname !== (prePath + '/party.html') &&
-            window.location.pathname !== (prePath + '/start.html') &&
-            window.location.pathname !== (prePath + '/leaderboard.html')
-        ) {
+        if (window.location.pathname !== (prePath + '/party.html') && window.location.pathname !== (prePath + '/start.html') && window.location.pathname !== (prePath + '/leaderboard.html')) {
             window.location.pathname = (prePath + '/start.html');
         }
         // Get information from user.
@@ -58,13 +76,13 @@ window.onload = function () {
             var parent = button.parentElement;
             // Animate loading
             parent.classList.add("clicked");
-            setTimeout((function() {
+            setTimeout((function () {
                 parent.classList.add("success");
             }), 2600);
-            setTimeout((function() {
+            setTimeout((function () {
                 parent.classList = 'row';
             }), 2600);
-            setTimeout((function() {
+            setTimeout((function () {
                 document.querySelector('#top').scrollIntoView({
                     behavior: 'smooth'
                 });
@@ -74,8 +92,11 @@ window.onload = function () {
     if (document.querySelector('#registerPartyButton')) {
         getPartyDataFromForm()
     }
+    // var ref = firebase.database().ref("users");
+    // ref.orderByChild("userName").equalTo('Petter').on("child_added", function(snapshot) {
+    //     console.log(snapshot.key);
+    // });
 }
-
 function test() {}
 // ---                  --- //
 // *** Set-up functions *** //
@@ -128,20 +149,20 @@ function updateProgressBar(progress) {
     p.innerText = newProgress + '%';
 }
 
-function updateOutput(name, val) {
+/* function updateOutput(name, val) {
     var selector = "#" + name.id + "Output";
     document.querySelector(selector).innerText = convertToMGPPoints(Number(val));
     updateVotePagePoints();
-}
+} */
 
-function updateVotePagePoints() {
+/* function updateVotePagePoints() {
     var song = convertToMGPPoints(Number(document.querySelector('#songRange').value));
     var show = convertToMGPPoints(Number(document.querySelector('#showRange').value));
     var costume = convertToMGPPoints(Number(document.querySelector('#costumeRange').value));
     var xFactor = convertToMGPPoints(Number(document.querySelector('#xFactorRange').value));
     var total = song + show + costume + xFactor;
     document.querySelector('#score').innerText = "Poengsum: " + total;
-}
+} */
 
 function updateVotePageInfo(_nr) {
     document.querySelector('#songName i').innerText = esc2017info[_nr].title;
@@ -159,15 +180,11 @@ function updateProfileButton()  {
 }
 
 function resetVotePagePoints() {
-    document.querySelector('#songRange').value = 1;
-    document.querySelector('#showRange').value = 1;
-    document.querySelector('#costumeRange').value = 1;
-    document.querySelector('#xFactorRange').value = 1;
-    document.querySelector('#score').innerText = "Poengsum: " + 4;
-    document.querySelector('#songRangeOutput').innerText = 1;
-    document.querySelector('#showRangeOutput').innerText = 1;
-    document.querySelector('#costumeRangeOutput').innerText = 1;
-    document.querySelector('#xFactorRangeOutput').innerText = 1;
+    document.getElementById('1_1').checked = true;
+    document.getElementById('2_1').checked = true;
+    document.getElementById('3_1').checked = true;
+    document.getElementById('4_1').checked = true;
+    total.innerText = "4";
 }
 
 function updatePointsRows() {
@@ -226,6 +243,16 @@ function createPartyListNode(_partyName, _host) {
     listElement.appendChild(div);
     return listElement;
 }
+function changeHandler(event) {
+    var cat = categories.find(x => x.name === this.name);
+    cat.value = Number(this.value);
+    total.innerText = categories[0].value + categories[1].value + categories[2].value + categories[3].value;
+}
+
+Array.prototype.forEach.call(radios, function (radio) {
+    radio.addEventListener('change', changeHandler);
+});
+
 // ---                --- //
 // *** User functions *** //
 // ---                --- //
@@ -359,10 +386,10 @@ function setPoints(_key, _nr, _song, _show, _costume, _xfactor, _total) {
 
 function sendPointsToDatabase(_key, _nr) {
     console.log("Button clicked. And lots of points added.");
-    var song = convertToMGPPoints(Number(document.querySelector('#songRange').value));
-    var show = convertToMGPPoints(Number(document.querySelector('#showRange').value));
-    var costume = convertToMGPPoints(Number(document.querySelector('#costumeRange').value));
-    var xFactor = convertToMGPPoints(Number(document.querySelector('#xFactorRange').value));
+    var song = categories[0].value;
+    var show = categories[1].value;
+    var costume = categories[2].value;
+    var xFactor = categories[3].value;
     var total = song + show + costume + xFactor;
     setPoints(_key, _nr, song, show, costume, xFactor, total);
     resetVotePagePoints();
@@ -371,8 +398,8 @@ function sendPointsToDatabase(_key, _nr) {
 function addPartiesToDatabase(_partyName, _host) {
     console.log('Add party to database.');
     database.ref('parties').push({
-        partyName: _partyName,
-        host: _host
+        partyName: _partyName
+        , host: _host
     });
 }
 
@@ -467,7 +494,6 @@ function convertToMGPPoints(points) {
     else if (points === 10) return 12;
     else return points;
 }
-
 /**
     Smoothly scroll element to the given target (element.scrollTop)
     for the given duration
@@ -475,7 +501,7 @@ function convertToMGPPoints(points) {
     Returns a promise that's fulfilled when done, or rejected if
     interrupted
  */
- function smoothScrollTo(element, target, duration) {
+function smoothScrollTo(element, target, duration) {
     target = Math.round(target);
     duration = Math.round(duration);
     if (duration < 0) {
@@ -485,52 +511,53 @@ function convertToMGPPoints(points) {
         element.scrollTop = target;
         return Promise.resolve();
     }
-
     var start_time = Date.now();
     var end_time = start_time + duration;
-
     var start_top = element.scrollTop;
     var distance = target - start_top;
     // based on http://en.wikipedia.org/wiki/Smoothstep
-    var smooth_step = function(start, end, point) {
-        if(point <= start) { return 0; }
-        if(point >= end) { return 1; }
+    var smooth_step = function (start, end, point) {
+        if (point <= start) {
+            return 0;
+        }
+        if (point >= end) {
+            return 1;
+        }
         var x = (point - start) / (end - start); // interpolation
-        return x*x*(3 - 2*x);
+        return x * x * (3 - 2 * x);
     }
-    return new Promise(function(resolve, reject) {
+    return new Promise(function (resolve, reject) {
         // This is to keep track of where the element's scrollTop is
         // supposed to be, based on what we're doing
         var previous_top = element.scrollTop;
         // This is like a think function from a game loop
-        var scroll_frame = function() {
-            if(element.scrollTop != previous_top) {
-                reject("interrupted");
-                return;
+        var scroll_frame = function () {
+                if (element.scrollTop != previous_top) {
+                    reject("interrupted");
+                    return;
+                }
+                // set the scrollTop for this frame
+                var now = Date.now();
+                var point = smooth_step(start_time, end_time, now);
+                var frameTop = Math.round(start_top + (distance * point));
+                element.scrollTop = frameTop;
+                // check if we're done!
+                if (now >= end_time) {
+                    resolve();
+                    return;
+                }
+                // If we were supposed to scroll but didn't, then we
+                // probably hit the limit, so consider it done; not
+                // interrupted.
+                if (element.scrollTop === previous_top && element.scrollTop !== frameTop) {
+                    resolve();
+                    return;
+                }
+                previous_top = element.scrollTop;
+                // schedule next frame for execution
+                setTimeout(scroll_frame, 0);
             }
-            // set the scrollTop for this frame
-            var now = Date.now();
-            var point = smooth_step(start_time, end_time, now);
-            var frameTop = Math.round(start_top + (distance * point));
-            element.scrollTop = frameTop;
-            // check if we're done!
-            if(now >= end_time) {
-                resolve();
-                return;
-            }
-            // If we were supposed to scroll but didn't, then we
-            // probably hit the limit, so consider it done; not
-            // interrupted.
-            if(element.scrollTop === previous_top
-                && element.scrollTop !== frameTop) {
-                resolve();
-                return;
-            }
-            previous_top = element.scrollTop;
-            // schedule next frame for execution
-            setTimeout(scroll_frame, 0);
-        }
-        // boostrap the animation process
+            // boostrap the animation process
         setTimeout(scroll_frame, 0);
     });
 }
