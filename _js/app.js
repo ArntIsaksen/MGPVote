@@ -1,3 +1,16 @@
+import {initializeApp} from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js';
+import {getFirestore, collection, getDocs, addDoc} from 'https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js';
+
+const firebaseConfig = {
+    apiKey: "AIzaSyCYAF9bwLv6Cc11yn50pNAWCSvMpAqNjl4",
+    authDomain: "votemgp.firebaseapp.com",
+    databaseURL: "https://votemgp.firebaseio.com",
+    projectId: "votemgp",
+    storageBucket: "votemgp.appspot.com",
+    messagingSenderId: "372207279854",
+    appId: "1:372207279854:web:2cc4399a7db13484ba9dff"
+  };
+
 var database;
 var userRef;
 var pointsRef;
@@ -26,11 +39,11 @@ var categories = [
 // var prePath = '/projects/votemgp';
 var prePath = '';
 window.onload = function () {
-    firebase.initializeApp(firebaseConfig);
-    database = firebase.database();
-    userRef = database.ref('users');
-    pointsRef = database.ref('points');
-    partyRef = database.ref('parties');
+    initializeApp(firebaseConfig);
+    database = getFirestore();
+    userRef = collection(database, 'users'); // database.ref('users');
+    pointsRef = collection(database, 'points'); // database.ref('points');
+    partyRef = collection(database, 'parties'); // database.ref('parties');
     // Check for user.
     if (userExists() !== null) {
         console.log('Found user: ' + userExists());
@@ -209,6 +222,12 @@ function updatePointsRows() {
 }
 
 function updatePartyList() {
+    getDocs(partyRef)
+    .then(
+        (snapshot) => {
+            console.log(snapshot.docs)
+        }
+    )
     database.ref('parties').once('value').then(function (snapshot) {
         console.log(snapshot.val());
         var partiesFromDB = snapshot.val();
